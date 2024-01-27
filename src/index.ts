@@ -14,6 +14,9 @@ const pool = new Pool({
   port: 5432,
 });
 
+// NOTE: There's a table is called "urls" and it has these columns:
+// id, user_id, short, long
+
 app.post('/urls', async (req, res) => {
   const { user_id, short, long } = req.body;
   try {
